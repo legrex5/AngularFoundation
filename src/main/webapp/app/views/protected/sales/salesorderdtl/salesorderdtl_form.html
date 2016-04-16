@@ -1,0 +1,106 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Salesorderdtl' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtlid" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtlid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorderdtl_salesorderdtlid" name="salesorderdtlid" ng-model="salesorderdtl.salesorderdtlid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderid" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="salesorderdtl_salesorderid" ng-model="salesorderdtl.salesorderid" name="salesorderid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="salesorder in items.salesorders" title="{{salesorder.label}}" ng-selected="{{salesorder.value == salesorderdtl.salesorderid}}" value="{{salesorder.value}}">{{salesorder.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_detailexpiredid" class="col-sm-2 control-label">{{ 'salesorderdtl.detailexpiredid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="salesorderdtl_detailexpiredid" ng-model="salesorderdtl.detailexpiredid" name="detailexpiredid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="detailexpired in items.detailexpireds" title="{{detailexpired.label}}" ng-selected="{{detailexpired.value == salesorderdtl.detailexpiredid}}" value="{{detailexpired.value}}">{{detailexpired.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_userid" class="col-sm-2 control-label">{{ 'salesorderdtl.userid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="salesorderdtl_userid" ng-model="salesorderdtl.userid" name="userid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == salesorderdtl.userid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_productuomid" class="col-sm-2 control-label">{{ 'salesorderdtl.productuomid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="salesorderdtl_productuomid" ng-model="salesorderdtl.productuomid" name="productuomid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="productuom in items.productuoms" title="{{productuom.label}}" ng-selected="{{productuom.value == salesorderdtl.productuomid}}" value="{{productuom.value}}">{{productuom.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtlqty" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtlqty' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorderdtl_salesorderdtlqty" name="salesorderdtlqty" ng-model="salesorderdtl.salesorderdtlqty" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtlremainingqty" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtlremainingqty' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorderdtl_salesorderdtlremainingqty" name="salesorderdtlremainingqty" ng-model="salesorderdtl.salesorderdtlremainingqty" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtlprice" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtlprice' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorderdtl_salesorderdtlprice" name="salesorderdtlprice" ng-model="salesorderdtl.salesorderdtlprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtlbaseprice" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtlbaseprice' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorderdtl_salesorderdtlbaseprice" name="salesorderdtlbaseprice" ng-model="salesorderdtl.salesorderdtlbaseprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtldiscount" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtldiscount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorderdtl_salesorderdtldiscount" name="salesorderdtldiscount" ng-model="salesorderdtl.salesorderdtldiscount" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtlstatus" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtlstatus' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorderdtl_salesorderdtlstatus" name="salesorderdtlstatus" ng-model="salesorderdtl.salesorderdtlstatus" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorderdtl_salesorderdtlmoddate" class="col-sm-2 control-label">{{ 'salesorderdtl.salesorderdtlmoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="salesorderdtl_salesorderdtlmoddate" bs-datepicker data-autoclose="1" ng-model="salesorderdtl.salesorderdtlmoddate" name="salesorderdtlmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(salesorderdtl.salesorderdtlid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/sales/salesorderdtl">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

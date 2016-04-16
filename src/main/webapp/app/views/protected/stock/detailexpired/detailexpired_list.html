@@ -1,0 +1,26 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Detailexpired' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'detailexpired.detailexpiredid' | translate }}</th>
+						<th>{{ 'detailexpired.detailexpireddate' | translate }}</th>
+						<th>{{ 'detailexpired.detailexpiredqty' | translate }}</th>
+						<th>{{ 'detailexpired.detailexpiredmoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/stock/detailexpired/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="detailexpired in detailexpireds">
+						<td>{{detailexpired.detailexpiredid}}</td>
+						<td>{{detailexpired.detailexpireddate | date:'shortDate'}}</td>
+						<td>{{detailexpired.detailexpiredqty | number }}</td>
+						<td>{{detailexpired.detailexpiredmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/stock/detailexpired/{{detailexpired.detailexpiredid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

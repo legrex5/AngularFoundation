@@ -1,0 +1,97 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Productuom' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="productuom_productuomid" class="col-sm-2 control-label">{{ 'productuom.productuomid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productuom_productuomid" name="productuomid" ng-model="productuom.productuomid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_userid" class="col-sm-2 control-label">{{ 'productuom.userid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="productuom_userid" ng-model="productuom.userid" name="userid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == productuom.userid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productid" class="col-sm-2 control-label">{{ 'productuom.productid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="productuom_productid" ng-model="productuom.productid" name="productid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="product in items.products" title="{{product.label}}" ng-selected="{{product.value == productuom.productid}}" value="{{product.value}}">{{product.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_uomid" class="col-sm-2 control-label">{{ 'productuom.uomid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="productuom_uomid" ng-model="productuom.uomid" name="uomid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="uom in items.uoms" title="{{uom.label}}" ng-selected="{{uom.value == productuom.uomid}}" value="{{uom.value}}">{{uom.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productuomvalue" class="col-sm-2 control-label">{{ 'productuom.productuomvalue' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productuom_productuomvalue" name="productuomvalue" ng-model="productuom.productuomvalue" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productuomissalesunit" class="col-sm-2 control-label">{{ 'productuom.productuomissalesunit' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productuom_productuomissalesunit" name="productuomissalesunit" ng-model="productuom.productuomissalesunit" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productuomisstockunit" class="col-sm-2 control-label">{{ 'productuom.productuomisstockunit' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productuom_productuomisstockunit" name="productuomisstockunit" ng-model="productuom.productuomisstockunit" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productuomisbaseunit" class="col-sm-2 control-label">{{ 'productuom.productuomisbaseunit' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productuom_productuomisbaseunit" name="productuomisbaseunit" ng-model="productuom.productuomisbaseunit" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productuomsequence" class="col-sm-2 control-label">{{ 'productuom.productuomsequence' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productuom_productuomsequence" name="productuomsequence" ng-model="productuom.productuomsequence" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productuomisactive" class="col-sm-2 control-label">{{ 'productuom.productuomisactive' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productuom_productuomisactive" name="productuomisactive" ng-model="productuom.productuomisactive" class="form-control" maxLength="" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productuom_productuommoddate" class="col-sm-2 control-label">{{ 'productuom.productuommoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="productuom_productuommoddate" bs-datepicker data-autoclose="1" ng-model="productuom.productuommoddate" name="productuommoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(productuom.productuomid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/stock/productuom">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

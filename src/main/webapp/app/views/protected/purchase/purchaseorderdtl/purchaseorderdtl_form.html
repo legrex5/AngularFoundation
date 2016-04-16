@@ -1,0 +1,94 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Purchaseorderdtl' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="purchaseorderdtl_purchaseorderdtlid" class="col-sm-2 control-label">{{ 'purchaseorderdtl.purchaseorderdtlid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="purchaseorderdtl_purchaseorderdtlid" name="purchaseorderdtlid" ng-model="purchaseorderdtl.purchaseorderdtlid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_podtlPoid" class="col-sm-2 control-label">{{ 'purchaseorderdtl.podtlPoid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="purchaseorderdtl_podtlPoid" ng-model="purchaseorderdtl.podtlPoid" name="podtlPoid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="purchaseorder in items.purchaseorders" title="{{purchaseorder.label}}" ng-selected="{{purchaseorder.value == purchaseorderdtl.podtlPoid}}" value="{{purchaseorder.value}}">{{purchaseorder.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_podtlProductuomid" class="col-sm-2 control-label">{{ 'purchaseorderdtl.podtlProductuomid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="purchaseorderdtl_podtlProductuomid" ng-model="purchaseorderdtl.podtlProductuomid" name="podtlProductuomid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="productuom in items.productuoms" title="{{productuom.label}}" ng-selected="{{productuom.value == purchaseorderdtl.podtlProductuomid}}" value="{{productuom.value}}">{{productuom.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_podtlUserid" class="col-sm-2 control-label">{{ 'purchaseorderdtl.podtlUserid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="purchaseorderdtl_podtlUserid" ng-model="purchaseorderdtl.podtlUserid" name="podtlUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == purchaseorderdtl.podtlUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_podtlDetailexpiredid" class="col-sm-2 control-label">{{ 'purchaseorderdtl.podtlDetailexpiredid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="purchaseorderdtl_podtlDetailexpiredid" ng-model="purchaseorderdtl.podtlDetailexpiredid" name="podtlDetailexpiredid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="detailexpired in items.detailexpireds" title="{{detailexpired.label}}" ng-selected="{{detailexpired.value == purchaseorderdtl.podtlDetailexpiredid}}" value="{{detailexpired.value}}">{{detailexpired.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_purchaseorderdtlqty" class="col-sm-2 control-label">{{ 'purchaseorderdtl.purchaseorderdtlqty' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="purchaseorderdtl_purchaseorderdtlqty" name="purchaseorderdtlqty" ng-model="purchaseorderdtl.purchaseorderdtlqty" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_purchaseorderdtlremainingqty" class="col-sm-2 control-label">{{ 'purchaseorderdtl.purchaseorderdtlremainingqty' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="purchaseorderdtl_purchaseorderdtlremainingqty" name="purchaseorderdtlremainingqty" ng-model="purchaseorderdtl.purchaseorderdtlremainingqty" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_purchaseorderdtlprice" class="col-sm-2 control-label">{{ 'purchaseorderdtl.purchaseorderdtlprice' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="purchaseorderdtl_purchaseorderdtlprice" name="purchaseorderdtlprice" ng-model="purchaseorderdtl.purchaseorderdtlprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_purchaseorderdtldiscount" class="col-sm-2 control-label">{{ 'purchaseorderdtl.purchaseorderdtldiscount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="purchaseorderdtl_purchaseorderdtldiscount" name="purchaseorderdtldiscount" ng-model="purchaseorderdtl.purchaseorderdtldiscount" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="purchaseorderdtl_purchaseorderdtlmoddate" class="col-sm-2 control-label">{{ 'purchaseorderdtl.purchaseorderdtlmoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="purchaseorderdtl_purchaseorderdtlmoddate" bs-datepicker data-autoclose="1" ng-model="purchaseorderdtl.purchaseorderdtlmoddate" name="purchaseorderdtlmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(purchaseorderdtl.purchaseorderdtlid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/purchase/purchaseorderdtl">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

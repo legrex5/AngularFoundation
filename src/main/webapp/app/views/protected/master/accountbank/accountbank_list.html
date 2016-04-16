@@ -1,0 +1,27 @@
+
+			<legend class="legende">{{ 'master.accountbank.ACCOUNTBANK' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.accountbank.ACCOUNTBANKID' | translate }}</th>-->
+						<th>{{ 'master.accountbank.ACCOUNTBANKNUMBER' | translate }}</th>
+						<th>{{ 'master.accountbank.ACCOUNTBANKNAME' | translate }}</th>
+						<th>{{ 'master.accountbank.ACCOUNTBANKISSALES' | translate }}</th>
+						<th>{{ 'master.accountbank.ACCOUNTBANKMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/accountbank/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="accountbank in accountbanks">
+						<!--<td>{{accountbank.accountbankid}}</td>-->
+						<td>{{accountbank.accountbanknumber}}</td>
+						<td>{{accountbank.accountbankname}}</td>
+						<td>{{accountbank.accountbankissales}}</td>
+						<td>{{accountbank.accountbankmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/accountbank/{{accountbank.accountbankid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

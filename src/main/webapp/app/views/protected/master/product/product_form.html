@@ -1,0 +1,94 @@
+
+		<legend class="legende">{{ 'master.product.PRODUCT' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!--			<div class="form-group">
+				<label for="product_productid" class="col-sm-2 control-label">{{ 'master.product.PRODUCTID' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="product_productid" name="productid" ng-model="product.productid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<label for="product_productUserid" class="col-sm-2 control-label">{{ 'master.product.PRODUCTUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="product_productUserid" ng-model="product.productUserid" name="productUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == product.productUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productTypeid" class="col-sm-2 control-label">{{ 'master.product.PRODUCTTYPEID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="product_productTypeid" ng-model="product.productTypeid" name="productTypeid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="type in items.types" title="{{type.label}}" ng-selected="{{type.value == product.productTypeid}}" value="{{type.value}}">{{type.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productCategoryid" class="col-sm-2 control-label">{{ 'master.product.PRODUCTCATEGORYID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="product_productCategoryid" ng-model="product.productCategoryid" name="productCategoryid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="category in items.categorys" title="{{category.label}}" ng-selected="{{category.value == product.productCategoryid}}" value="{{category.value}}">{{category.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productcode" class="col-sm-2 control-label">{{ 'master.product.PRODUCTCODE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="product_productcode" name="productcode" ng-model="product.productcode" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productname" class="col-sm-2 control-label">{{ 'master.product.PRODUCTNAME' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="product_productname" name="productname" ng-model="product.productname" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productisactive" class="col-sm-2 control-label">{{ 'master.product.PRODUCTISACTIVE' | translate }}</label>
+				<div class="col-sm-10">
+				<div class="checkbox c-checkbox">
+					<label>
+						<input type="checkbox" checked="{{product.productisactive}}" value="" id="product_productisactive" name="productisactive" ng-model="product.productisactive" class="form-control"/>
+						<span class="fa fa-check"></span>
+					</label>
+				</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productbaseprice" class="col-sm-2 control-label">{{ 'master.product.PRODUCTBASEPRICE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="product_productbaseprice" name="productbaseprice" ng-model="product.productbaseprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productprice" class="col-sm-2 control-label">{{ 'master.product.PRODUCTPRICE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="product_productprice" name="productprice" ng-model="product.productprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="product_productmoddate" class="col-sm-2 control-label">{{ 'master.product.PRODUCTMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="product_productmoddate" bs-datepicker data-autoclose="1" ng-model="product.productmoddate" name="productmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(product.productid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/master/product">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

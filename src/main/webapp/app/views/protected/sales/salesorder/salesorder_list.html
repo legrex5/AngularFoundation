@@ -1,0 +1,42 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Salesorder' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'salesorder.salesorderid' | translate }}</th>
+						<th>{{ 'salesorder.salesordercorrectionId' | translate }}</th>
+						<th>{{ 'salesorder.salesorderUserid' | translate }}</th>
+						<th>{{ 'salesorder.salesordercode' | translate }}</th>
+						<th>{{ 'salesorder.salesorderdate' | translate }}</th>
+						<th>{{ 'salesorder.salesorderdeliverydate' | translate }}</th>
+						<th>{{ 'salesorder.salesorderstatus' | translate }}</th>
+						<th>{{ 'salesorder.salesorderdiscount' | translate }}</th>
+						<th>{{ 'salesorder.salesorderbilling' | translate }}</th>
+						<th>{{ 'salesorder.salesorderpaying' | translate }}</th>
+						<th>{{ 'salesorder.salesorderincludetax' | translate }}</th>
+						<th>{{ 'salesorder.salesordermoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/sales/salesorder/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="salesorder in salesorders">
+						<td>{{salesorder.salesorderid}}</td>
+						<td>{{salesorder.salesordercorrectionId}}</td>
+						<td>{{salesorder.salesorderUserid}}</td>
+						<td>{{salesorder.salesordercode}}</td>
+						<td>{{salesorder.salesorderdate | date:'shortDate'}}</td>
+						<td>{{salesorder.salesorderdeliverydate | date:'shortDate'}}</td>
+						<td>{{salesorder.salesorderstatus}}</td>
+						<td>{{salesorder.salesorderdiscount | number }}</td>
+						<td>{{salesorder.salesorderbilling | number }}</td>
+						<td>{{salesorder.salesorderpaying | number }}</td>
+						<td>{{salesorder.salesorderincludetax}}</td>
+						<td>{{salesorder.salesordermoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/sales/salesorder/{{salesorder.salesorderid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

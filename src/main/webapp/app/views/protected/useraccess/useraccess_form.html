@@ -1,0 +1,53 @@
+
+		<legend class="legende">{{ 'useraccess.USERACCESS' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!-- 			<div class="form-group"> -->
+<!-- 				<label for="useraccess_userid" class="col-sm-2 control-label">{{ 'useraccess.USERID' | translate }}</label> -->
+<!-- 				<div class="col-sm-10"> -->
+<!-- 					<input type="text" id="useraccess_userid" name="userid" ng-model="useraccess.userid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+			<div class="form-group">
+				<label for="useraccess_userUserid" class="col-sm-2 control-label">{{ 'useraccess.USERUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="useraccess_userUserid" ng-model="useraccess.userUserid" name="userUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == useraccess.userUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="useraccess_usercode" class="col-sm-2 control-label">{{ 'useraccess.USERCODE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="useraccess_usercode" name="usercode" ng-model="useraccess.usercode" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="useraccess_username" class="col-sm-2 control-label">{{ 'useraccess.USERNAME' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="useraccess_username" name="username" ng-model="useraccess.username" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="useraccess_usermoddate" class="col-sm-2 control-label">{{ 'useraccess.USERMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="useraccess_usermoddate" bs-datepicker data-autoclose="1" ng-model="useraccess.usermoddate" name="usermoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(useraccess.userid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/useraccess">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

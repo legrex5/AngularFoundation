@@ -1,0 +1,74 @@
+
+		<legend class="legende">{{ 'master.pricehistory.PRICEHISTORY' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!--			<div class="form-group">
+				<label for="pricehistory_pricehistoryid" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYID' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="pricehistory_pricehistoryid" name="pricehistoryid" ng-model="pricehistory.pricehistoryid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<label for="pricehistory_pricehistoryUserid" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="pricehistory_pricehistoryUserid" ng-model="pricehistory.pricehistoryUserid" name="pricehistoryUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == pricehistory.pricehistoryUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pricehistory_pricehistoryProductid" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYPRODUCTID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="pricehistory_pricehistoryProductid" ng-model="pricehistory.pricehistoryProductid" name="pricehistoryProductid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="product in items.products" title="{{product.label}}" ng-selected="{{product.value == pricehistory.pricehistoryProductid}}" value="{{product.value}}">{{product.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pricehistory_pricehistorybaseprice" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYBASEPRICE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="pricehistory_pricehistorybaseprice" name="pricehistorybaseprice" ng-model="pricehistory.pricehistorybaseprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pricehistory_pricehistoryprice" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYPRICE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="pricehistory_pricehistoryprice" name="pricehistoryprice" ng-model="pricehistory.pricehistoryprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pricehistory_pricehistoryfrom" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYFROM' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="pricehistory_pricehistoryfrom" bs-datepicker data-autoclose="1" ng-model="pricehistory.pricehistoryfrom" name="pricehistoryfrom" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pricehistory_pricehistoryto" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYTO' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="pricehistory_pricehistoryto" bs-datepicker data-autoclose="1" ng-model="pricehistory.pricehistoryto" name="pricehistoryto" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pricehistory_pricehistorymoddate" class="col-sm-2 control-label">{{ 'master.pricehistory.PRICEHISTORYMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="pricehistory_pricehistorymoddate" bs-datepicker data-autoclose="1" ng-model="pricehistory.pricehistorymoddate" name="pricehistorymoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(pricehistory.pricehistoryid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/master/pricehistory">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

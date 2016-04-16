@@ -1,0 +1,34 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Productuom' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'productuom.productuomid' | translate }}</th>
+						<th>{{ 'productuom.productuomvalue' | translate }}</th>
+						<th>{{ 'productuom.productuomissalesunit' | translate }}</th>
+						<th>{{ 'productuom.productuomisstockunit' | translate }}</th>
+						<th>{{ 'productuom.productuomisbaseunit' | translate }}</th>
+						<th>{{ 'productuom.productuomsequence' | translate }}</th>
+						<th>{{ 'productuom.productuomisactive' | translate }}</th>
+						<th>{{ 'productuom.productuommoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/stock/productuom/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="productuom in productuoms">
+						<td>{{productuom.productuomid}}</td>
+						<td>{{productuom.productuomvalue | number }}</td>
+						<td>{{productuom.productuomissalesunit | number }}</td>
+						<td>{{productuom.productuomisstockunit | number }}</td>
+						<td>{{productuom.productuomisbaseunit | number }}</td>
+						<td>{{productuom.productuomsequence | number }}</td>
+						<td>{{productuom.productuomisactive}}</td>
+						<td>{{productuom.productuommoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/stock/productuom/{{productuom.productuomid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

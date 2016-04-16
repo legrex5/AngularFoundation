@@ -1,0 +1,30 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'master.location.LOCATION' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.location.locationid' | translate }}</th>-->
+						<th>{{ 'master.location.LOCATIONCODE' | translate }}</th>
+						<th>{{ 'master.location.LOCATIONNAME' | translate }}</th>
+						<th>{{ 'master.location.LOCATIONISMAIN' | translate }}</th>
+						<th>{{ 'master.location.LOCATIONISACTIVE' | translate }}</th>
+						<th>{{ 'master.location.LOCATIONMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/location/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="location in locations">
+<!--						<td>{{location.locationid}}</td>-->
+						<td>{{location.locationcode}}</td>
+						<td>{{location.locationname}}</td>
+						<td>{{location.locationismain}}</td>
+						<td>{{location.locationisactive}}</td>
+						<td>{{location.locationmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/location/{{location.locationid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

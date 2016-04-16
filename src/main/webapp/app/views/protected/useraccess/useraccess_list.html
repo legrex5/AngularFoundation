@@ -1,0 +1,25 @@
+
+			<legend class="legende">{{ 'useraccess.USERACCESS' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+<!-- 						<th>{{ 'useraccess.USERID' | translate }}</th> -->
+						<th>{{ 'useraccess.USERCODE' | translate }}</th>
+						<th>{{ 'useraccess.USERNAME' | translate }}</th>
+						<th>{{ 'useraccess.USERMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/useraccess/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in useraccesss">
+<!-- 						<td>{{user.userid}}</td> -->
+						<td>{{user.usercode}}</td>
+						<td>{{user.username}}</td>
+						<td>{{user.usermoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/useraccess/{{user.userid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

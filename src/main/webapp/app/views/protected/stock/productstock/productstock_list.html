@@ -1,0 +1,28 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Productstock' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'productstock.productstockid' | translate }}</th>
+						<th>{{ 'productstock.productstockqty' | translate }}</th>
+						<th>{{ 'productstock.productstockmin' | translate }}</th>
+						<th>{{ 'productstock.productstockmax' | translate }}</th>
+						<th>{{ 'productstock.productstockmoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/stock/productstock/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="productstock in productstocks">
+						<td>{{productstock.productstockid}}</td>
+						<td>{{productstock.productstockqty | number }}</td>
+						<td>{{productstock.productstockmin | number }}</td>
+						<td>{{productstock.productstockmax | number }}</td>
+						<td>{{productstock.productstockmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/stock/productstock/{{productstock.productstockid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

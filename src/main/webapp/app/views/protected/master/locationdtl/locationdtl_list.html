@@ -1,0 +1,24 @@
+<legend class="legende">{{ 'master.locationdtl.LOCATIONDTL' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.locationdtl.LOCATIONDTLID' | translate }}</th>-->
+						<th>{{ 'master.locationdtl.LOCATIONDTLNAME' | translate }}</th>
+						<th>{{ 'master.locationdtl.LOCATIONDTLISACTIVE' | translate }}</th>
+						<th>{{ 'master.locationdtl.LOCATIONDTLMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/locationdtl/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--<tr ng-repeat="locationdtl in locationdtls">-->
+						<td>{{locationdtl.locationdtlid}}</td>
+						<td>{{locationdtl.locationdtlname}}</td>
+						<td>{{locationdtl.locationdtlisactive}}</td>
+						<td>{{locationdtl.locationdtlmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/locationdtl/{{locationdtl.locationdtlid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

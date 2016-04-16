@@ -1,0 +1,73 @@
+[
+  {
+    "text": "Main Navigation",
+    "heading": "true",
+    "translate": "sidebar.heading.HEADER"
+  },
+  {
+    "text": "Components",
+    "heading": "true",
+    "translate": "sidebar.heading.COMPONENTS"
+  },
+  {
+    "text": "Master Data",
+    "sref": "#",
+    "icon": "icon-chemistry",
+    "submenu": [
+      {"text": "Product", "sref": "app.product", "translate": "master.product.PRODUCT"},
+      {"text": "Supplier", "sref": "app.supplier", "translate": "master.supplier.SUPPLIER" },
+      {"text": "Category", "sref": "app.category", "translate": "master.category.CATEGORY" },
+      {"text": "Type", "sref":"app.type", "translate":"master.type.TYPE"},
+      {"text": "UOM", "sref":"app.uom", "translate": "master.uom.UOM"},
+      {"text": "Bank", "sref":"app.bank", "translate": "master.bank.BANK"},
+      {"text": "Location", "sref":"app.location", "translate": "master.location.LOCATION"},
+      {"text": "Payment Form", "sref":"app.paymentform", "translate": "master.paymentform.PAYMENTFORM"},
+      {"text": "Price", "sref":"app.pricehistory","translate":"master.pricehistory.PRICEHISTORY"}
+    ],
+    "translate": "master.MASTER",
+    "alert":"new"
+  },
+  {
+    "text": "Sales",
+    "sref": "#",
+    "icon": "icon-note",
+    "submenu": [
+      {"text": "Sales Order", "sref": "app.salesOrder", "translate": "sales.salesorder.SALESORDER" },
+      {"text": "Correction", "sref": "app.salesordercorrection", "translate": "sales.correction.CORRECTION"}
+    ],
+    "translate": "sales.SALES"
+  },
+  {
+    "text": "Purchase",
+    "sref": "#",
+    "icon": "icon-graph",
+    "submenu": [
+      { "text": "Purchase Order",   "sref": "app.purchaseOrder", "translate":"purchase.purchaseorder.PURCHASEORDER" },
+      { "text": "Return Supplier",  "sref":"app.returnsupplier", "translate": "purchase.returnsupplier.RETURNSUPPLIER" }
+    ],
+    "translate": "purchase.PURCHASE"
+  },
+  {
+    "text": "Stock Count",
+    "sref": "#",
+    "icon": "icon-grid",
+    "submenu": [
+      { "text": "Expired", "sref": "app.expiredproduct", "translate": "stock.expiredproduct.EXPIREDPRODUCT" },
+      { "text": "Location Product",     "sref": "app.stockproduct", "translate": "stock.stockproduct.STOCKPRODUCT" },
+      { "text": "UOM Conversion", "sref":"app.uomproduct", "translate":"stock.uomproduct.UOMPRODUCT"}
+    ],
+    "translate": "stock.STOCK"
+  },
+  {
+  	"text": "User Access",
+  	"sref": "app.userAccess",
+  	"icon": "icon-graduation",
+  	"translate":"useraccess.USERACCESS"
+  },
+  {
+    "text": "Documentation",
+    "sref": "app.documentation",
+    "icon": "icon-graduation",
+    "translate": "sidebar.nav.DOCUMENTATION"
+  }
+]

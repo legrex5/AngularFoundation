@@ -1,0 +1,38 @@
+		<legend class="legende">{{ 'master.supplier.SUPPLIER' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.supplier.SUPPLIERID' | translate }}</th>-->
+						<th>{{ 'master.supplier.SUPPLIERCODE' | translate }}</th>
+						<th>{{ 'master.supplier.SUPPLIERNAME' | translate }}</th>
+						<th>{{ 'master.supplier.SUPPLIERADDRESS' | translate }}</th>
+						<th>{{ 'master.supplier.SUPPLIERCITY' | translate }}</th>
+						<th>{{ 'master.supplier.SUPPLIERPHONE1' | translate }}</th>
+						<th>{{ 'master.supplier.SUPPLIERPHONE2' | translate }}</th>
+						<th>{{ 'master.supplier.SUPPLIERFAX1' | translate }}</th>
+						<th>{{ 'master.supplier.SUPPLIERFAX2' | translate }}</th>
+<!-- 						<th>{{ 'master.supplier.SUPPLIERISACTIVE' | translate }}</th> -->
+<!-- 						<th>{{ 'master.supplier.SUPPLIERMODDATE' | translate }}</th> -->
+						<th><a class="btn btn-info" href='#/app/master/supplier/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="supplier in suppliers">
+						<!--<td>{{supplier.supplierid}}</td>-->
+						<td>{{supplier.suppliercode}}</td>
+						<td>{{supplier.suppliername}}</td>
+						<td>{{supplier.supplieraddres}}</td>
+						<td>{{supplier.suppliercity}}</td>
+						<td>{{supplier.supplierphone1}}</td>
+						<td>{{supplier.supplierphone2}}</td>
+						<td>{{supplier.supplierfax1}}</td>
+						<td>{{supplier.supplierfax2}}</td>
+<!-- 						<td>{{supplier.supplierisactive}}</td> -->
+<!-- 						<td>{{supplier.suppliermoddate | date:'shortDate'}}</td> -->
+						<td><a class="btn btn-info" href="#/app/master/supplier/{{supplier.supplierid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

@@ -1,0 +1,64 @@
+
+		<legend class="legende">{{ 'master.bank.BANK' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!--			<div class="form-group">
+				<label for="bank_bankid" class="col-sm-2 control-label">{{ 'master.bank.BANKID' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="bank_bankid" name="bankid" ng-model="bank.bankid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<label for="bank_bankUserid" class="col-sm-2 control-label">{{ 'master.bank.BANKUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="bank_bankUserid" ng-model="bank.bankUserid" name="bankUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == bank.bankUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bank_bankname" class="col-sm-2 control-label">{{ 'master.bank.BANKNAME' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="bank_bankname" name="bankname" ng-model="bank.bankname" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bank_bankdescription" class="col-sm-2 control-label">{{ 'master.bank.BANKDESCRIPTION' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="bank_bankdescription" name="bankdescription" ng-model="bank.bankdescription" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bank_bankisactive" class="col-sm-2 control-label">{{ 'master.bank.BANKISACTIVE' | translate }}</label>
+				<div class="col-sm-10">
+					<div class="checkbox c-checkbox">
+						<label>
+							<input type="checkbox" checked="{{bank.bankisactive}}" value="" id="bank_bankisactive" name="bankisactive" ng-model="bank.bankisactive" class="form-control" />
+							<span class="fa fa-check"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bank_bankmoddate" class="col-sm-2 control-label">{{ 'master.bank.BANKMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="bank_bankmoddate" bs-datepicker data-autoclose="1" ng-model="bank.bankmoddate" name="bankmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(bank.bankid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/master/bank">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

@@ -1,0 +1,29 @@
+
+			<legend class="legende">{{ 'master.pricehistory.PRICEHISTORY' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.pricehistory.PRICEHISTORYID' | translate }}</th>-->
+						<th>{{ 'master.pricehistory.PRICEHISTORYBASEPRICE' | translate }}</th>
+						<th>{{ 'master.pricehistory.PRICEHISTORYPRICE' | translate }}</th>
+						<th>{{ 'master.pricehistory.PRICEHISTORYFROM' | translate }}</th>
+						<th>{{ 'master.pricehistory.PRICEHISTORYTO' | translate }}</th>
+						<th>{{ 'master.pricehistory.PRICEHISTORYMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/pricehistory/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="pricehistory in pricehistorys">
+						<!--<td>{{pricehistory.pricehistoryid}}</td>-->
+						<td>{{pricehistory.pricehistorybaseprice | number }}</td>
+						<td>{{pricehistory.pricehistoryprice | number }}</td>
+						<td>{{pricehistory.pricehistoryfrom | date:'shortDate'}}</td>
+						<td>{{pricehistory.pricehistoryto | date:'shortDate'}}</td>
+						<td>{{pricehistory.pricehistorymoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/pricehistory/{{pricehistory.pricehistoryid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

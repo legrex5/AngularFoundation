@@ -1,0 +1,70 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Salesordercorrection' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectionid" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectionid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesordercorrection_salesordercorrectionid" name="salesordercorrectionid" ng-model="salesordercorrection.salesordercorrectionid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectionSodtlid" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectionSodtlid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesordercorrection_salesordercorrectionSodtlid" name="salesordercorrectionSodtlid" ng-model="salesordercorrection.salesordercorrectionSodtlid" class="form-control" maxLength="255" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectionUserid" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectionUserid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesordercorrection_salesordercorrectionUserid" name="salesordercorrectionUserid" ng-model="salesordercorrection.salesordercorrectionUserid" class="form-control" maxLength="255" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectionqty" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectionqty' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesordercorrection_salesordercorrectionqty" name="salesordercorrectionqty" ng-model="salesordercorrection.salesordercorrectionqty" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectionprice" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectionprice' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesordercorrection_salesordercorrectionprice" name="salesordercorrectionprice" ng-model="salesordercorrection.salesordercorrectionprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectionbaseprice" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectionbaseprice' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesordercorrection_salesordercorrectionbaseprice" name="salesordercorrectionbaseprice" ng-model="salesordercorrection.salesordercorrectionbaseprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectiondiscount" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectiondiscount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesordercorrection_salesordercorrectiondiscount" name="salesordercorrectiondiscount" ng-model="salesordercorrection.salesordercorrectiondiscount" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesordercorrection_salesordercorrectionmoddate" class="col-sm-2 control-label">{{ 'salesordercorrection.salesordercorrectionmoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="salesordercorrection_salesordercorrectionmoddate" bs-datepicker data-autoclose="1" ng-model="salesordercorrection.salesordercorrectionmoddate" name="salesordercorrectionmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(salesordercorrection.salesordercorrectionid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/sales/salesordercorrection">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

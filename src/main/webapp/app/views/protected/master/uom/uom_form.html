@@ -1,0 +1,64 @@
+
+		<legend class="legende">{{ 'master.uom.UOM' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!--			<div class="form-group">
+				<label for="uom_uomid" class="col-sm-2 control-label">{{ 'master.uom.UOMID' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uom_uomid" name="uomid" ng-model="uom.uomid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<label for="uom_uomUserid" class="col-sm-2 control-label">{{ 'master.uom.UOMUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="uom_uomUserid" ng-model="uom.uomUserid" name="uomUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == uom.uomUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uom_uomcode" class="col-sm-2 control-label">{{ 'master.uom.UOMCODE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uom_uomcode" name="uomcode" ng-model="uom.uomcode" class="form-control" maxLength="10" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uom_uomdescription" class="col-sm-2 control-label">{{ 'master.uom.UOMDESCRIPTION' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uom_uomdescription" name="uomdescription" ng-model="uom.uomdescription" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uom_uomisactive" class="col-sm-2 control-label">{{ 'master.uom.UOMISACTIVE' | translate }}</label>
+				<div class="col-sm-10">
+				<div class="checkbox c-checkbox">
+					<label>
+						<input type="checkbox" value="" checked="{{uom.uomisactive}}" id="uom_uomisactive" name="uomisactive" ng-model="uom.uomisactive" class="form-control"/>
+						<span class="fa fa-check"></span>
+					</label>
+				</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uom_uommoddate" class="col-sm-2 control-label">{{ 'master.uom.UOMMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="uom_uommoddate" bs-datepicker data-autoclose="1" ng-model="uom.uommoddate" name="uommoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(uom.uomid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/master/uom">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

@@ -1,0 +1,31 @@
+
+			<legend class="legende">{{ 'master.paymentform.PAYMENTFORM' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.paymentform.PAYMENTFORMID' | translate }}</th>-->
+						<th>{{ 'master.paymentform.PAYMENTFORMCODE' | translate }}</th>
+						<th>{{ 'master.paymentform.PAYMENTFORMNAME' | translate }}</th>
+						<th>{{ 'master.paymentform.PAYMENTFORMISCREDIT' | translate }}</th>
+						<th>{{ 'master.paymentform.PAYMENTFORMNEEDBANK' | translate }}</th>
+						<th>{{ 'master.paymentform.PAYMENTFORMISACTIVE' | translate }}</th>
+						<th>{{ 'master.paymentform.PAYMENTFORMMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/paymentform/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="paymentform in paymentforms">
+						<!--<td>{{paymentform.paymentformid}}</td>-->
+						<td>{{paymentform.paymentformcode}}</td>
+						<td>{{paymentform.paymentformname}}</td>
+						<td>{{paymentform.paymentformiscredit}}</td>
+						<td>{{paymentform.paymentformneedbank}}</td>
+						<td>{{paymentform.paymentformisactive}}</td>
+						<td>{{paymentform.paymentformmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/paymentform/{{paymentform.paymentformid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

@@ -1,0 +1,70 @@
+
+		<legend class="legende">{{ 'master.location.LOCATION' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!--			<div class="form-group">
+				<label for="location_locationid" class="col-sm-2 control-label">{{ 'master.location.LOCATIONID' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="location_locationid" name="locationid" ng-model="location.locationid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<label for="location_locationUserid" class="col-sm-2 control-label">{{ 'master.location.LOCATIONUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="location_locationUserid" ng-model="location.locationUserid" name="locationUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == location.locationUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="location_locationcode" class="col-sm-2 control-label">{{ 'master.location.LOCATIONCODE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="location_locationcode" name="locationcode" ng-model="location.locationcode" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="location_locationname" class="col-sm-2 control-label">{{ 'master.location.LOCATIONNAME' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="location_locationname" name="locationname" ng-model="location.locationname" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="location_locationismain" class="col-sm-2 control-label">{{ 'master.location.LOCATIONISMAIN' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="location_locationismain" name="locationismain" ng-model="location.locationismain" class="form-control" maxLength="" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="location_locationisactive" class="col-sm-2 control-label">{{ 'master.location.LOCATIONISACTIVE' | translate }}</label>
+				<div class="col-sm-10">
+				<div class="checkbox c-checkbox">
+					<label>
+						<input type="checkbox" checked="{{location.locationisactive}}" value="" id="location_locationisactive" name="locationisactive" ng-model="location.locationisactive" class="form-control"/>
+						<span class="fa fa-check"></span>
+					</label>
+				</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="location_locationmoddate" class="col-sm-2 control-label">{{ 'master.location.LOCATIONMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="location_locationmoddate" bs-datepicker data-autoclose="1" ng-model="location.locationmoddate" name="locationmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(location.locationid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/master/location">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

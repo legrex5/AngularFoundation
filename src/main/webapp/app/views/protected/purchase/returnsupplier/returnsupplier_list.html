@@ -1,0 +1,32 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Returnsupplier' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'returnsupplier.returnsupplierid' | translate }}</th>
+						<th>{{ 'returnsupplier.returnsupplierUserid' | translate }}</th>
+						<th>{{ 'returnsupplier.returnsuppliercode' | translate }}</th>
+						<th>{{ 'returnsupplier.returnsupplierdate' | translate }}</th>
+						<th>{{ 'returnsupplier.returnsupplieramount' | translate }}</th>
+						<th>{{ 'returnsupplier.returnsupplierstatus' | translate }}</th>
+						<th>{{ 'returnsupplier.returnsuppliermoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/purchase/returnsupplier/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="returnsupplier in returnsuppliers">
+						<td>{{returnsupplier.returnsupplierid}}</td>
+						<td>{{returnsupplier.returnsupplierUserid}}</td>
+						<td>{{returnsupplier.returnsuppliercode}}</td>
+						<td>{{returnsupplier.returnsupplierdate | date:'shortDate'}}</td>
+						<td>{{returnsupplier.returnsupplieramount | number }}</td>
+						<td>{{returnsupplier.returnsupplierstatus}}</td>
+						<td>{{returnsupplier.returnsuppliermoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/purchase/returnsupplier/{{returnsupplier.returnsupplierid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

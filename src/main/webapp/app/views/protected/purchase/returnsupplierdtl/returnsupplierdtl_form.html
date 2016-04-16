@@ -1,0 +1,82 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Returnsupplierdtl' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="returnsupplierdtl_returndtlid" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returndtlid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="returnsupplierdtl_returndtlid" name="returndtlid" ng-model="returnsupplierdtl.returndtlid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="returnsupplierdtl_returndtlReturnsupplierid" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returndtlReturnsupplierid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="returnsupplierdtl_returndtlReturnsupplierid" ng-model="returnsupplierdtl.returndtlReturnsupplierid" name="returndtlReturnsupplierid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="returnsupplier in items.returnsuppliers" title="{{returnsupplier.label}}" ng-selected="{{returnsupplier.value == returnsupplierdtl.returndtlReturnsupplierid}}" value="{{returnsupplier.value}}">{{returnsupplier.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="returnsupplierdtl_returndtlProductuomid" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returndtlProductuomid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="returnsupplierdtl_returndtlProductuomid" ng-model="returnsupplierdtl.returndtlProductuomid" name="returndtlProductuomid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="productuom in items.productuoms" title="{{productuom.label}}" ng-selected="{{productuom.value == returnsupplierdtl.returndtlProductuomid}}" value="{{productuom.value}}">{{productuom.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="returnsupplierdtl_returndtlUserid" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returndtlUserid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="returnsupplierdtl_returndtlUserid" ng-model="returnsupplierdtl.returndtlUserid" name="returndtlUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == returnsupplierdtl.returndtlUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="returnsupplierdtl_returndtlDetailexpiredid" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returndtlDetailexpiredid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="returnsupplierdtl_returndtlDetailexpiredid" ng-model="returnsupplierdtl.returndtlDetailexpiredid" name="returndtlDetailexpiredid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="detailexpired in items.detailexpireds" title="{{detailexpired.label}}" ng-selected="{{detailexpired.value == returnsupplierdtl.returndtlDetailexpiredid}}" value="{{detailexpired.value}}">{{detailexpired.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="returnsupplierdtl_returndtlqty" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returndtlqty' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="returnsupplierdtl_returndtlqty" name="returndtlqty" ng-model="returnsupplierdtl.returndtlqty" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="returnsupplierdtl_returndtlprice" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returndtlprice' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="returnsupplierdtl_returndtlprice" name="returndtlprice" ng-model="returnsupplierdtl.returndtlprice" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="returnsupplierdtl_returnrdtlmoddate" class="col-sm-2 control-label">{{ 'returnsupplierdtl.returnrdtlmoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="returnsupplierdtl_returnrdtlmoddate" bs-datepicker data-autoclose="1" ng-model="returnsupplierdtl.returnrdtlmoddate" name="returnrdtlmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(returnsupplierdtl.returndtlid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/purchase/returnsupplierdtl">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

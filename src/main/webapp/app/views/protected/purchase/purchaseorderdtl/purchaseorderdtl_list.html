@@ -1,0 +1,30 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Purchaseorderdtl' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'purchaseorderdtl.purchaseorderdtlid' | translate }}</th>
+						<th>{{ 'purchaseorderdtl.purchaseorderdtlqty' | translate }}</th>
+						<th>{{ 'purchaseorderdtl.purchaseorderdtlremainingqty' | translate }}</th>
+						<th>{{ 'purchaseorderdtl.purchaseorderdtlprice' | translate }}</th>
+						<th>{{ 'purchaseorderdtl.purchaseorderdtldiscount' | translate }}</th>
+						<th>{{ 'purchaseorderdtl.purchaseorderdtlmoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/purchase/purchaseorderdtl/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="purchaseorderdtl in purchaseorderdtls">
+						<td>{{purchaseorderdtl.purchaseorderdtlid}}</td>
+						<td>{{purchaseorderdtl.purchaseorderdtlqty | number }}</td>
+						<td>{{purchaseorderdtl.purchaseorderdtlremainingqty | number }}</td>
+						<td>{{purchaseorderdtl.purchaseorderdtlprice | number }}</td>
+						<td>{{purchaseorderdtl.purchaseorderdtldiscount | number }}</td>
+						<td>{{purchaseorderdtl.purchaseorderdtlmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/purchase/purchaseorderdtl/{{purchaseorderdtl.purchaseorderdtlid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

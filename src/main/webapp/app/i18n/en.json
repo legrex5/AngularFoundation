@@ -1,0 +1,353 @@
+{
+	"dashboard": 
+	{
+		"WELCOME": "Welcome to {{appName}}"
+	},
+
+	"topbar": 
+	{
+		"messages": 
+		{
+			"UNREAD": "Unread messages",
+			"MORE": "More messages"
+		},
+
+		"search": 
+		{
+			"PLACEHOLDER": "Type and hit enter.."
+		},
+
+		"notification": 
+		{
+			"MORE": "More notifications"
+		}
+	},
+
+	"offsidebar": 
+	{
+		"setting": 
+		{
+			"SETTINGS": "Settings",
+			"THEMES": "Themes",
+			"layout": 
+			{
+				"FIXED": "Fixed",
+				"COLLAPSED": "Collapsed"
+			}
+		},
+
+		"chat": 
+		{
+			"CONNECTIONS": "Connections",
+			"SEARCH": "Search contacts",
+			"ONLINE": "ONLINE",
+			"OFFLINE": "OFFLINE",
+			"LOAD_MORE": "Load More",
+			"TASK_COMPLETION": "Tasks completion",
+			"QUOTA": "Upload Quota"
+		}
+	},
+
+	"sidebar": 
+	{
+		"WELCOME": "Welcome",
+		"heading": 
+		{
+			"HEADER": "Main Navigation",
+			"COMPONENTS": "Components",
+			"MORE": "More"
+		},
+
+		"nav": 
+		{
+			"DASHBOARD": "Dashboard",
+			"WIDGETS": "Widgets",
+			"DOCUMENTATION": "Documentation",
+			"element": 
+			{
+				"ELEMENTS": "Elements",
+				"BUTTON": "Button",
+				"COLOR": "Colors",
+				"NOTIFICATION": "Notification",
+				"INTERACTION": "Interaction",
+				"SPINNER": "Spinner",
+				"ANIMATION": "Animation",
+				"DROPDOWN": "Dropdown",
+				"PANEL": "Panel",
+				"PORTLET": "Portlet",
+				"GRID": "Grid",
+				"GRID_MASONRY": "Grid Masonry",
+				"TYPO": "Typography",
+				"FONT_ICON": "Font Icons",
+				"WEATHER_ICON": "Weather Icons"
+			},
+
+			"form": 
+			{
+				"FORM": "Forms",
+				"STANDARD": "Standard",
+				"EXTENDED": "Extended",
+				"VALIDATION": "Validation",
+				"WIZARD": "Wizard",
+				"UPLOAD": "Upload"
+			},
+
+			"chart": 
+			{
+				"CHART": "Charts",
+				"FLOT": "Flot",
+				"RADIAL": "Radial"
+			},
+
+			"table": 
+			{
+				"TABLE": "Table",
+				"STANDARD": "Standard",
+				"EXTENDED": "Extended",
+				"DATATABLE": "Datatable"
+			},
+
+			"map": 
+			{
+				"MAP": "Maps",
+				"GOOGLE": "Google Map",
+				"VECTOR": "Vector Map"
+			},
+
+			"extra": 
+			{
+				"EXTRA": "Extras",
+				"MAILBOX": "Mailbox",
+				"TIMELINE": "Timeline",
+				"CALENDAR": "Calendar",
+				"INVOICE": "Invoice",
+				"SEARCH": "Search",
+				"TODO": "Todo List",
+				"PROFILE": "Profile"
+			},
+
+			"pages": 
+			{
+				"PAGES": "Pages",
+				"LOGIN": "Login",
+				"REGISTER": "Register",
+				"RECOVER": "Recover password",
+				"PROFILE": "Profile",
+				"LOCK": "Lock",
+				"STARTER": "Starter Template"
+			}
+		}
+	},
+
+	"master": 
+	{
+		"MASTER": "Master",
+		"accountbank": 
+		{
+			"ACCOUNTBANK": "Accountbank",
+			"ACCOUNTBANKID": "accountbankid",
+			"ACCOUNTBANKSUPPLIERID": "accountbankSupplierid",
+			"ACCOUNTBANKSALESORDERID": "accountbankSalesorderid",
+			"ACCOUNTBANKBANKID": "accountbankBankid",
+			"ACCOUNTBANKUSERID": "accountbankUserid",
+			"ACCOUNTBANKNUMBER": "accountbanknumber",
+			"ACCOUNTBANKNAME": "accountbankname",
+			"ACCOUNTBANKISSALES": "accountbankissales",
+			"ACCOUNTBANKMODDATE": "accountbankmoddate",
+			"ID.NOT.DEFINED": "Accountbank identifier is not defined"
+		},
+
+		"bank": 
+		{
+			"BANK": "Bank",
+			"BANKID": "ID",
+			"BANKUSERID": "User",
+			"BANKNAME": "Bank Name",
+			"BANKDESCRIPTION": "Bank Description",
+			"BANKISACTIVE": "Is Active",
+			"BANKMODDATE": "Modified Date",
+			"ID.NOT.DEFINED": "Bank identifier is not defined"
+		},
+
+		"category": 
+		{
+			"CATEGORY": "Category",
+			"CATEGORYID": "categoryid",
+			"CATEGORYUSERID": "categoryUserid",
+			"CATEGORYCODE": "categorycode",
+			"CATEGORYNAME": "categoryname",
+			"CATEGORYISACTIVE": "categoryisactive",
+			"CATEGORYMODDATE": "categorymoddate",
+			"ID.NOT.DEFINED": "Category identifier is not defined"
+		},
+
+		"location": 
+		{
+			"LOCATION": "Location",
+			"LOCATIONID": "locationid",
+			"LOCATIONUSERID": "locationUserid",
+			"LOCATIONCODE": "locationcode",
+			"LOCATIONNAME": "locationname",
+			"LOCATIONISMAIN": "locationismain",
+			"LOCATIONISACTIVE": "locationisactive",
+			"LOCATIONMODDATE": "locationmoddate",
+			"ID.NOT.DEFINED": "Location identifier is not defined"
+		},
+
+		"locationdtl": 
+		{
+			"LOCATIONDTL": "Locationdtl",
+			"LOCATIONDTLID": "locationdtlid",
+			"LOCATIONDTLLOCATIONID": "locationdtlLocationid",
+			"LOCATIONDTLUSERID": "locationdtlUserid",
+			"LOCATIONDTLNAME": "locationdtlname",
+			"LOCATIONDTLISACTIVE": "locationdtlisactive",
+			"LOCATIONDTLMODDATE": "locationdtlmoddate",
+			"ID.NOT.DEFINED": "Locationdtl identifier is not defined"
+		},
+
+		"paymentform": 
+		{
+			"PAYMENTFORM": "Paymentform",
+			"PAYMENTFORMID": "paymentformid",
+			"PAYMENTFORMUSERID": "paymentformUserid",
+			"PAYMENTFORMCODE": "paymentformcode",
+			"PAYMENTFORMNAME": "paymentformname",
+			"PAYMENTFORMISCREDIT": "paymentformiscredit",
+			"PAYMENTFORMNEEDBANK": "paymentformneedbank",
+			"PAYMENTFORMISACTIVE": "paymentformisactive",
+			"PAYMENTFORMMODDATE": "paymentformmoddate",
+			"ID.NOT.DEFINED": "Paymentform identifier is not defined"
+		},
+
+		"pricehistory": 
+		{
+			"PRICEHISTORY": "Pricehistory",
+			"PRICEHISTORYID": "pricehistoryid",
+			"PRICEHISTORYUSERID": "pricehistoryUserid",
+			"PRICEHISTORYPRODUCTID": "pricehistoryProductid",
+			"PRICEHISTORYBASEPRICE": "pricehistorybaseprice",
+			"PRICEHISTORYPRICE": "pricehistoryprice",
+			"PRICEHISTORYFROM": "pricehistoryfrom",
+			"PRICEHISTORYTO": "pricehistoryto",
+			"PRICEHISTORYMODDATE": "pricehistorymoddate",
+			"ID.NOT.DEFINED": "Pricehistory identifier is not defined"
+		},
+
+		"product": 
+		{
+			"PRODUCT": "Product",
+			"PRODUCTID": "productid",
+			"PRODUCTUSERID": "productUserid",
+			"PRODUCTTYPEID": "productTypeid",
+			"PRODUCTCATEGORYID": "productCategoryid",
+			"PRODUCTCODE": "productcode",
+			"PRODUCTNAME": "productname",
+			"PRODUCTISACTIVE": "productisactive",
+			"PRODUCTBASEPRICE": "productbaseprice",
+			"PRODUCTPRICE": "productprice",
+			"PRODUCTMODDATE": "productmoddate",
+			"ID.NOT.DEFINED": "Product identifier is not defined"
+		},
+
+		"supplier": 
+		{
+			"SUPPLIER": "Supplier",
+			"SUPPLIERID": "supplierid",
+			"SUPPLIERUSERID": "supplierUserid",
+			"SUPPLIERCODE": "suppliercode",
+			"SUPPLIERNAME": "suppliername",
+			"SUPPLIERADDRESS": "supplieraddres",
+			"SUPPLIERCITY": "suppliercity",
+			"SUPPLIERPHONE1": "supplierphone1",
+			"SUPPLIERPHONE2": "supplierphone2",
+			"SUPPLIERFAX1": "supplierfax1",
+			"SUPPLIERFAX2": "supplierfax2",
+			"SUPPLIERISACTIVE": "supplierisactive",
+			"SUPPLIERMODDATE": "suppliermoddate",
+			"ID.NOT.DEFINED": "Supplier identifier is not defined"
+		},
+
+		"type": 
+		{
+			"TYPE": "Type",
+			"TYPEID": "typeid",
+			"TYPEUSERID": "typeUserid",
+			"TYPECODE": "typecode",
+			"TYPENAME": "typename",
+			"TYPEISACTIVE": "typeisactive",
+			"TYPEMODDATE": "typemoddate",
+			"ID.NOT.DEFINED": "Type identifier is not defined"
+		},
+
+		"uom": 
+		{
+			"UOM": "Uom",
+			"UOMID": "uomid",
+			"UOMUSERID": "uomUserid",
+			"UOMCODE": "uomcode",
+			"UOMDESCRIPTION": "uomdescription",
+			"UOMISACTIVE": "uomisactive",
+			"UOMMODDATE": "uommoddate",
+			"ID.NOT.DEFINED": "Uom identifier is not defined"
+		}
+	},
+
+	"sales": 
+	{
+		"SALES": "Sales",
+		"salesorder": 
+		{
+			"SALESORDER": "Sales Order"
+		},
+
+		"correction": 
+		{
+			"CORRECTION": "Correction"
+		}
+	},
+
+	"purchase": 
+	{
+		"PURCHASE" : "Purchase",
+		"purchaseorder": 
+		{
+			"PURCHASEORDER": "Purchase Order"
+		},
+
+		"returnsupplier": 
+		{
+			"RETURNSUPPLIER": "Return Supplier"
+		}
+	},
+
+	"stock": 
+	{
+		"STOCK" : "Stock Count",
+		"expiredproduct": 
+		{
+			"EXPIREDPRODUCT": "Expired Product"
+		},
+
+		"stockproduct": 
+		{
+			"STOCKPRODUCT": "Stock Product"
+		},
+
+		"uomproduct": 
+		{
+			"UOMPRODUCT": "UOM Conversion"
+		}
+	},
+	"useraccess":
+	{
+		"USERACCESS": "User Access",
+		"USERID": "userid",
+		"USERUSERID": "userUserid",
+		"USERCODE": "usercode",
+		"USERNAME": "username",
+		"USERMODDATE": "usermoddate",
+		"IDNOTDEFINED": "Useraccess identifier is not defined",
+		"CODENOTDEFINED": "Useraccess identifier is not defined"
+	}
+}

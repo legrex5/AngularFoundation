@@ -1,0 +1,79 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Productstock' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="productstock_productstockid" class="col-sm-2 control-label">{{ 'productstock.productstockid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productstock_productstockid" name="productstockid" ng-model="productstock.productstockid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productstock_productstockLocationid" class="col-sm-2 control-label">{{ 'productstock.productstockLocationid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="productstock_productstockLocationid" ng-model="productstock.productstockLocationid" name="productstockLocationid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="location in items.locations" title="{{location.label}}" ng-selected="{{location.value == productstock.productstockLocationid}}" value="{{location.value}}">{{location.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productstock_productstockUserid" class="col-sm-2 control-label">{{ 'productstock.productstockUserid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="productstock_productstockUserid" ng-model="productstock.productstockUserid" name="productstockUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == productstock.productstockUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productstock_productstockProductuomid" class="col-sm-2 control-label">{{ 'productstock.productstockProductuomid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="productstock_productstockProductuomid" ng-model="productstock.productstockProductuomid" name="productstockProductuomid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="productuom in items.productuoms" title="{{productuom.label}}" ng-selected="{{productuom.value == productstock.productstockProductuomid}}" value="{{productuom.value}}">{{productuom.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productstock_productstockqty" class="col-sm-2 control-label">{{ 'productstock.productstockqty' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productstock_productstockqty" name="productstockqty" ng-model="productstock.productstockqty" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productstock_productstockmin" class="col-sm-2 control-label">{{ 'productstock.productstockmin' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productstock_productstockmin" name="productstockmin" ng-model="productstock.productstockmin" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productstock_productstockmax" class="col-sm-2 control-label">{{ 'productstock.productstockmax' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="productstock_productstockmax" name="productstockmax" ng-model="productstock.productstockmax" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="productstock_productstockmoddate" class="col-sm-2 control-label">{{ 'productstock.productstockmoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="productstock_productstockmoddate" bs-datepicker data-autoclose="1" ng-model="productstock.productstockmoddate" name="productstockmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(productstock.productstockid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/stock/productstock">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

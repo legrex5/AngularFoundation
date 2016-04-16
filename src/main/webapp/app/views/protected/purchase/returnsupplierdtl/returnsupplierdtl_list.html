@@ -1,0 +1,26 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Returnsupplierdtl' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'returnsupplierdtl.returndtlid' | translate }}</th>
+						<th>{{ 'returnsupplierdtl.returndtlqty' | translate }}</th>
+						<th>{{ 'returnsupplierdtl.returndtlprice' | translate }}</th>
+						<th>{{ 'returnsupplierdtl.returnrdtlmoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/purchase/returnsupplierdtl/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="returnsupplierdtl in returnsupplierdtls">
+						<td>{{returnsupplierdtl.returndtlid}}</td>
+						<td>{{returnsupplierdtl.returndtlqty | number }}</td>
+						<td>{{returnsupplierdtl.returndtlprice | number }}</td>
+						<td>{{returnsupplierdtl.returnrdtlmoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/purchase/returnsupplierdtl/{{returnsupplierdtl.returndtlid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

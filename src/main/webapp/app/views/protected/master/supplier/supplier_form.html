@@ -1,0 +1,99 @@
+
+		<legend class="legende">{{ 'master.supplier.SUPPLIER' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!--			<div class="form-group">
+				<label for="supplier_supplierid" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERID' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_supplierid" name="supplierid" ng-model="supplier.supplierid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<label for="supplier_supplierUserid" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="supplier_supplierUserid" ng-model="supplier.supplierUserid" name="supplierUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == supplier.supplierUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_suppliercode" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERCODE' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_suppliercode" name="suppliercode" ng-model="supplier.suppliercode" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_suppliername" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERNAME' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_suppliername" name="suppliername" ng-model="supplier.suppliername" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_supplieraddres" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERADDRESS' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_supplieraddres" name="supplieraddres" ng-model="supplier.supplieraddres" class="form-control" maxLength="200" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_suppliercity" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERCITY' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_suppliercity" name="suppliercity" ng-model="supplier.suppliercity" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_supplierphone1" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERPHONE1' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_supplierphone1" name="supplierphone1" ng-model="supplier.supplierphone1" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_supplierphone2" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERPHONE2' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_supplierphone2" name="supplierphone2" ng-model="supplier.supplierphone2" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_supplierfax1" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERFAX1' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_supplierfax1" name="supplierfax1" ng-model="supplier.supplierfax1" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_supplierfax2" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERFAX2' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplier_supplierfax2" name="supplierfax2" ng-model="supplier.supplierfax2" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_supplierisactive" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERISACTIVE' | translate }}</label>
+				<div class="col-sm-10">
+				<div class="checkbox c-checkbox">
+				<label>
+                        <input type="checkbox" checked="{{supplier.supplierisactive}}" value="" id="supplier_supplierisactive" name="supplierisactive" ng-model="supplier.supplierisactive" class="form-control"/>
+                        <span class="fa fa-check"></span></label>
+				</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplier_suppliermoddate" class="col-sm-2 control-label">{{ 'master.supplier.SUPPLIERMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="supplier_suppliermoddate" bs-datepicker data-autoclose="1" ng-model="supplier.suppliermoddate" name="suppliermoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(supplier.supplierid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/master/supplier">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

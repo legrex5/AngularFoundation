@@ -1,0 +1,27 @@
+		
+			<legend class="legende">{{ 'master.category.CATEGORY' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+<!-- 						<th>{{ 'master.category.CATEGORYID' | translate }}</th> -->
+						<th>{{ 'master.category.CATEGORYCODE' | translate }}</th>
+						<th>{{ 'master.category.CATEGORYNAME' | translate }}</th>
+						<th>{{ 'master.category.CATEGORYISACTIVE' | translate }}</th>
+						<th>{{ 'master.category.CATEGORYMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/category/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="category in categorys">
+<!-- 						<td>{{category.categoryid}}</td> -->
+						<td>{{category.categorycode}}</td>
+						<td>{{category.categoryname}}</td>
+						<td>{{category.categoryisactive}}</td>
+						<td>{{category.categorymoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/category/{{category.categoryid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

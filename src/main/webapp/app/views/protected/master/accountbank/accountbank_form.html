@@ -1,0 +1,86 @@
+
+		<legend class="legende">{{ 'master.accountbank.ACCOUNTBANK' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+<!--			<div class="form-group">
+				<label for="accountbank_accountbankid" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKID' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="accountbank_accountbankid" name="accountbankid" ng-model="accountbank.accountbankid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<label for="accountbank_accountbankSupplierid" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKSUPPLIERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="accountbank_accountbankSupplierid" ng-model="accountbank.accountbankSupplierid" name="accountbankSupplierid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="supplier in items.suppliers" title="{{supplier.label}}" ng-selected="{{supplier.value == accountbank.accountbankSupplierid}}" value="{{supplier.value}}">{{supplier.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="accountbank_accountbankSalesorderid" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKSALESORDERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="accountbank_accountbankSalesorderid" ng-model="accountbank.accountbankSalesorderid" name="accountbankSalesorderid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="salesorder in items.salesorders" title="{{salesorder.label}}" ng-selected="{{salesorder.value == accountbank.accountbankSalesorderid}}" value="{{salesorder.value}}">{{salesorder.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="accountbank_accountbankBankid" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKBANKID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="accountbank_accountbankBankid" ng-model="accountbank.accountbankBankid" name="accountbankBankid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="bank in items.banks" title="{{bank.label}}" ng-selected="{{bank.value == accountbank.accountbankBankid}}" value="{{bank.value}}">{{bank.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="accountbank_accountbankUserid" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKUSERID' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="accountbank_accountbankUserid" ng-model="accountbank.accountbankUserid" name="accountbankUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == accountbank.accountbankUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="accountbank_accountbanknumber" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKNUMBER' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="accountbank_accountbanknumber" name="accountbanknumber" ng-model="accountbank.accountbanknumber" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="accountbank_accountbankname" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKNAME' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="accountbank_accountbankname" name="accountbankname" ng-model="accountbank.accountbankname" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="accountbank_accountbankissales" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKISSALES' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="accountbank_accountbankissales" name="accountbankissales" ng-model="accountbank.accountbankissales" class="form-control" maxLength="" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="accountbank_accountbankmoddate" class="col-sm-2 control-label">{{ 'master.accountbank.ACCOUNTBANKMODDATE' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="accountbank_accountbankmoddate" bs-datepicker data-autoclose="1" ng-model="accountbank.accountbankmoddate" name="accountbankmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(accountbank.accountbankid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/master/accountbank">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>

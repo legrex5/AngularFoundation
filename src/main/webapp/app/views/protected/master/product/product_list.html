@@ -1,0 +1,31 @@
+	
+			<legend class="legende">{{ 'master.product.PRODUCT' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.product.PRODUCTID' | translate }}</th>-->
+						<th>{{ 'master.product.PRODUCTCODE' | translate }}</th>
+						<th>{{ 'master.product.PRODUCTNAME' | translate }}</th>
+<!-- 						<th>{{ 'master.product.PRODUCTISACTIVE' | translate }}</th> -->
+						<th>{{ 'master.product.PRODUCTBASEPRICE' | translate }}</th>
+						<th>{{ 'master.product.PRODUCTPRICE' | translate }}</th>
+<!-- 						<th>{{ 'master.product.PRODUCTMODDATE' | translate }}</th> -->
+						<th><a class="btn btn-info" href='#/app/master/product/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="product in products">
+						<!--<td>{{product.productid}}</td>-->
+						<td>{{product.productcode}}</td>
+						<td>{{product.productname}}</td>
+<!-- 						<td>{{product.productisactive}}</td> -->
+						<td>{{product.productbaseprice | number }}</td>
+						<td>{{product.productprice | number }}</td>
+<!-- 						<td>{{product.productmoddate | date:'shortDate'}}</td> -->
+						<td><a class="btn btn-info" href="#/app/master/product/{{product.productid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

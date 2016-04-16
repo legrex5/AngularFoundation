@@ -1,0 +1,27 @@
+
+			<legend class="legende">{{ 'master.uom.UOM' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.uom.UOMID' | translate }}</th>-->
+						<th>{{ 'master.uom.UOMCODE' | translate }}</th>
+						<th>{{ 'master.uom.UOMDESCRIPTION' | translate }}</th>
+						<th>{{ 'master.uom.UOMISACTIVE' | translate }}</th>
+						<th>{{ 'master.uom.UOMMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/uom/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="uom in uoms">
+						<!--<td>{{uom.uomid}}</td>-->
+						<td>{{uom.uomcode}}</td>
+						<td>{{uom.uomdescription}}</td>
+						<td>{{uom.uomisactive}}</td>
+						<td>{{uom.uommoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/uom/{{uom.uomid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

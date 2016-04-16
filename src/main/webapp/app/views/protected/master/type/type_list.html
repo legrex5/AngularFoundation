@@ -1,0 +1,27 @@
+
+			<legend class="legende">{{ 'master.type.TYPE' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--<th>{{ 'master.type.TYPEID' | translate }}</th>-->
+						<th>{{ 'master.type.TYPECODE' | translate }}</th>
+						<th>{{ 'master.type.TYPENAME' | translate }}</th>
+						<th>{{ 'master.type.TYPEISACTIVE' | translate }}</th>
+						<th>{{ 'master.type.TYPEMODDATE' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/master/type/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="type in types">
+						<!--<td>{{type.typeid}}</td>-->
+						<td>{{type.typecode}}</td>
+						<td>{{type.typename}}</td>
+						<td>{{type.typeisactive}}</td>
+						<td>{{type.typemoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/master/type/{{type.typeid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>

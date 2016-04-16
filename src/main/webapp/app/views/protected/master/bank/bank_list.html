@@ -1,0 +1,42 @@
+
+			<legend class="legende">{{ 'master.bank.BANK' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+<!-- 			<table class="table table-striped"> -->
+<!-- 				<thead> -->
+<!-- 					<tr> -->
+<!-- 						<th>{{ 'master.bank.BANKID' | translate }}</th> -->
+<!-- 						<th>{{ 'master.bank.BANKNAME' | translate }}</th> -->
+<!-- 						<th>{{ 'master.bank.BANKDESCRIPTION' | translate }}</th> -->
+<!-- 						<th>{{ 'master.bank.BANKISACTIVE' | translate }}</th> -->
+<!-- 						<th>{{ 'master.bank.BANKMODDATE' | translate }}</th> -->
+<!-- 						<th><a class="btn btn-info" href='#/app/master/bank/new'>{{ 'create' | translate }}</a></th> -->
+<!-- 					</tr> -->
+<!-- 				</thead> -->
+<!-- 				<tbody> -->
+<!-- 					<tr ng-repeat="bank in banks"> -->
+<!-- 						<td>{{bank.bankid}}</td> -->
+<!-- 						<td>{{bank.bankname}}</td> -->
+<!-- 						<td>{{bank.bankdescription}}</td> -->
+<!-- 						<td>{{bank.bankisactive}}</td> -->
+<!-- 						<td>{{bank.bankmoddate | date:'shortDate'}}</td> -->
+<!-- 						<td><a class="btn btn-info" href="#/app/master/bank/{{bank.bankid}}">{{ 'edit' | translate }}</a></td> -->
+<!-- 					</tr> -->
+<!-- 				</tbody> -->
+<!-- 			</table> -->
+			
+			<table ng-table="listBank" show-filter="true"
+					class="table table-condensed table-bordered table-striped">
+					<tbody>
+						<tr ng-repeat="bank in $data">
+							<td data-title="{{ 'master.bank.BANKNAME' | translate }}" filter="{bankname: 'text'}" width="10%">{{bank.bankname}}</td>
+							<td data-title="'{{ 'master.bank.BANKDESCRIPTION' | translate }}" filter="{bankdescription:'text'}"
+								width="23%">{{bank.bankdescription}}</td>
+							<td data-title="{{ 'master.bank.BANKISACTIVE' | translate }}" width="25%">{{bank.bankisactive}}</td>
+							<td data-title="'Pemeriksaan'" width="12%">
+								<a class="btn btn-info" href="#/app/master/bank/{{bank.bankid}}">{{ 'edit' | translate }}</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>

@@ -1,0 +1,67 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Supplierproduct' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="supplierproduct_supplierproductid" class="col-sm-2 control-label">{{ 'supplierproduct.supplierproductid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplierproduct_supplierproductid" name="supplierproductid" ng-model="supplierproduct.supplierproductid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplierproduct_supplierproductProductid" class="col-sm-2 control-label">{{ 'supplierproduct.supplierproductProductid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="supplierproduct_supplierproductProductid" ng-model="supplierproduct.supplierproductProductid" name="supplierproductProductid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="product in items.products" title="{{product.label}}" ng-selected="{{product.value == supplierproduct.supplierproductProductid}}" value="{{product.value}}">{{product.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplierproduct_supplierproductUserid" class="col-sm-2 control-label">{{ 'supplierproduct.supplierproductUserid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="supplierproduct_supplierproductUserid" ng-model="supplierproduct.supplierproductUserid" name="supplierproductUserid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="useraccess in items.useraccesss" title="{{useraccess.label}}" ng-selected="{{useraccess.value == supplierproduct.supplierproductUserid}}" value="{{useraccess.value}}">{{useraccess.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplierproduct_supplierproductSupplierid" class="col-sm-2 control-label">{{ 'supplierproduct.supplierproductSupplierid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="supplierproduct_supplierproductSupplierid" ng-model="supplierproduct.supplierproductSupplierid" name="supplierproductSupplierid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="supplier in items.suppliers" title="{{supplier.label}}" ng-selected="{{supplier.value == supplierproduct.supplierproductSupplierid}}" value="{{supplier.value}}">{{supplier.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplierproduct_supplierproductisactive" class="col-sm-2 control-label">{{ 'supplierproduct.supplierproductisactive' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="supplierproduct_supplierproductisactive" name="supplierproductisactive" ng-model="supplierproduct.supplierproductisactive" class="form-control" maxLength="" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="supplierproduct_supplierproductmoddate" class="col-sm-2 control-label">{{ 'supplierproduct.supplierproductmoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="supplierproduct_supplierproductmoddate" bs-datepicker data-autoclose="1" ng-model="supplierproduct.supplierproductmoddate" name="supplierproductmoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(supplierproduct.supplierproductid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/purchase/supplierproduct">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

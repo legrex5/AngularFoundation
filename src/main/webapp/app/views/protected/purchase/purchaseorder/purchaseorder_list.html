@@ -1,0 +1,40 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Purchaseorder' | translate }}</legend>
+		
+			<div ng-include src="'app/views/partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'purchaseorder.purchaseorderid' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseorderUserid' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseordercode' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseorderrefnumber' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseorderdate' | translate }}</th>
+						<th>{{ 'purchaseorder.puchaseorderamount' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaserorderdiscount' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseorderdeliverydate' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseorderstatus' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseorderincludetax' | translate }}</th>
+						<th>{{ 'purchaseorder.purchaseordermoddate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/app/purchase/purchaseorder/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="purchaseorder in purchaseorders">
+						<td>{{purchaseorder.purchaseorderid}}</td>
+						<td>{{purchaseorder.purchaseorderUserid}}</td>
+						<td>{{purchaseorder.purchaseordercode}}</td>
+						<td>{{purchaseorder.purchaseorderrefnumber}}</td>
+						<td>{{purchaseorder.purchaseorderdate | date:'shortDate'}}</td>
+						<td>{{purchaseorder.puchaseorderamount | number }}</td>
+						<td>{{purchaseorder.purchaserorderdiscount | number }}</td>
+						<td>{{purchaseorder.purchaseorderdeliverydate | date:'shortDate'}}</td>
+						<td>{{purchaseorder.purchaseorderstatus}}</td>
+						<td>{{purchaseorder.purchaseorderincludetax}}</td>
+						<td>{{purchaseorder.purchaseordermoddate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/app/purchase/purchaseorder/{{purchaseorder.purchaseorderid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

@@ -1,0 +1,103 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Salesorder' | translate }}</legend>
+		
+		<div ng-include src="'app/views/partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="salesorder_salesorderid" class="col-sm-2 control-label">{{ 'salesorder.salesorderid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesorderid" name="salesorderid" ng-model="salesorder.salesorderid" class="form-control" maxLength="255"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_paymentformid" class="col-sm-2 control-label">{{ 'salesorder.paymentformid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="salesorder_paymentformid" ng-model="salesorder.paymentformid" name="paymentformid" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="paymentform in items.paymentforms" title="{{paymentform.label}}" ng-selected="{{paymentform.value == salesorder.paymentformid}}" value="{{paymentform.value}}">{{paymentform.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesordercorrectionId" class="col-sm-2 control-label">{{ 'salesorder.salesordercorrectionId' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesordercorrectionId" name="salesordercorrectionId" ng-model="salesorder.salesordercorrectionId" class="form-control" maxLength="255" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderUserid" class="col-sm-2 control-label">{{ 'salesorder.salesorderUserid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesorderUserid" name="salesorderUserid" ng-model="salesorder.salesorderUserid" class="form-control" maxLength="255" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesordercode" class="col-sm-2 control-label">{{ 'salesorder.salesordercode' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesordercode" name="salesordercode" ng-model="salesorder.salesordercode" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderdate" class="col-sm-2 control-label">{{ 'salesorder.salesorderdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="salesorder_salesorderdate" bs-datepicker data-autoclose="1" ng-model="salesorder.salesorderdate" name="salesorderdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderdeliverydate" class="col-sm-2 control-label">{{ 'salesorder.salesorderdeliverydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="salesorder_salesorderdeliverydate" bs-datepicker data-autoclose="1" ng-model="salesorder.salesorderdeliverydate" name="salesorderdeliverydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderstatus" class="col-sm-2 control-label">{{ 'salesorder.salesorderstatus' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesorderstatus" name="salesorderstatus" ng-model="salesorder.salesorderstatus" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderdiscount" class="col-sm-2 control-label">{{ 'salesorder.salesorderdiscount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesorderdiscount" name="salesorderdiscount" ng-model="salesorder.salesorderdiscount" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderbilling" class="col-sm-2 control-label">{{ 'salesorder.salesorderbilling' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesorderbilling" name="salesorderbilling" ng-model="salesorder.salesorderbilling" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderpaying" class="col-sm-2 control-label">{{ 'salesorder.salesorderpaying' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesorderpaying" name="salesorderpaying" ng-model="salesorder.salesorderpaying" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesorderincludetax" class="col-sm-2 control-label">{{ 'salesorder.salesorderincludetax' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="salesorder_salesorderincludetax" name="salesorderincludetax" ng-model="salesorder.salesorderincludetax" class="form-control" maxLength="" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="salesorder_salesordermoddate" class="col-sm-2 control-label">{{ 'salesorder.salesordermoddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="salesorder_salesordermoddate" bs-datepicker data-autoclose="1" ng-model="salesorder.salesordermoddate" name="salesordermoddate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(salesorder.salesorderid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/app/sales/salesorder">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>
